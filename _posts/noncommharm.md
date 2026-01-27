@@ -1,7 +1,7 @@
 ---
 title: 'Non-commutative harmonic analysis'
 date: 2026-01-26
-permalink: /posts/2012/08/non-commutative-harmonic-analysis/
+permalink: /posts/2026/01/non-commutative-harmonic-analysis/
 tags:
   - operator-theory
   - expository

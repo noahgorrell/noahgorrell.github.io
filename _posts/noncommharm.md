@@ -1,6 +1,6 @@
 ---
 title: 'Non-commutative harmonic analysis'
-date: 2026-01-28
+date: 2026-01-26
 permalink: /posts/2012/08/non-commutative-harmonic-analysis/
 tags:
   - operator-theory

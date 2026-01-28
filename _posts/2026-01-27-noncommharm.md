@@ -27,16 +27,21 @@ A Special Case of Pontryagin Duality
 -----
 Let us consider the integrands in the definitions of the Fourier transform and Fourier series.
 
-**Exercise:** Show that the functions \\(x\mapsto e^{-2\pi i x\xi}\\), for some \\(\xi\in\mathbb R\\), are exactly the continuous group homomorphisms from \\(\mathbb R\\) to \\(\mathbf T\\).
+**Exercise:** Show that the functions \\(x\mapsto e^{-2\pi i x\xi}\\), for each \\(\xi\in\mathbb R\\), are exactly the continuous group homomorphisms from \\(\mathbb R\\) to \\(\mathbf T\\).
 
 We write \\(\hat{\mathbb R}\\) for the set of continuous group homomorphisms from \\(\mathbb R\\) to \\(\mathbf T\\). The preceding exercise says that the elements of \\(\hat{\mathbb R}\\) can be parametrised by the real numbers.
 
-**Exercise:** Show that \\(\hat{\mathbb R}\\) is a group under pointwise multiplication, and the identification \\(\hat{\mathbb R}\cong \mathbb R\\) is a group isomorphism.
+**Exercise:** Show that \\(\hat{\mathbb R}\\) is an abelian group under pointwise multiplication, and the identification \\(\hat{\mathbb R}\cong \mathbb R\\) is a group isomorphism.
 
-Therefore, given an integrable function $f:\mathbb R\to \mathbb R$, we can think of the Fourier transform $\hat f$ as a function defined on $\hat{\mathbb R}$.
+Therefore, given an integrable function \\(f:\mathbb R\to \mathbb R\\), we can think of the Fourier transform \\(\hat f\\) as a function defined on \\(\hat{\mathbb R}\\). Why does it make sense to do this? Well, because then for each \\(\xi\in \hat{\mathbb R}\\) (that is, each continuous group homomorphism \\(\xi:\mathbb R\to\mathbf T\\)), we can write \\(\hat f(\xi) = \int_{\R} f(x)\xi(x)\,dx\\).
 
-Similarly, the functions \\(\omega\mapsto \omega^k\\), for some \\(k\in \mathbb Z\\), are exactly the continuous group homomorphisms from \\(\mathbf T\\) to itself. Writing $\hat T$ for this set of homomorphisms, we again see that $\hat T$ is a group under pointwise multiplication and is isomorphic to $\mathbb Z$.
+Now, let us consider the case of \\(\mathbb Z\\). The functions \\(\omega\mapsto \omega^k\\), for some \\(k\in \mathbb Z\\), are exactly the continuous group homomorphisms from \\(\mathbf T\\) to itself. Writing \\(\hat T\\) for this set of homomorphisms, we again see that \\(\hat T\\) is an abelian group under pointwise multiplication and is isomorphic to \\(\mathbb Z\\). Again, we can regard the Fourier series as a function on \\(\hat T\\), and define \\(\hat f(\xi) = \int_{\mathbf T} f(\omega)\xi(\omega)\, d\sigma(\omega).\\)
 
 Abstract Harmonic Analysis
 =====
-Let \\(G\\) be a locally compact abelian group. (That is, \\(G\\) is a group, equipped with a locally compact Hausdorff topology that respects the group structure.)
+Let \\(G\\) be a locally compact abelian group. (That is, \\(G\\) is a group, equipped with a locally compact Hausdorff topology that respects the group structure.) The following is a fundamental fact about such groups.
+
+**Fact:** Every locally compact abelian group has (up to scaling by a positive constant) a unique *Haar measure*, which we denote by \\(\mu\\). This is a [Radon measure](https://en.wikipedia.org/wiki/Radon_measure#) that respects the group operations in the sense that \\[\int_G f(x)\, d\mu(x) = \int_G f(x-y)\, d\mu(x) = \int_G f(-x)\, d\mu(x).\\]
+
+As before, we define \\(\hat G\\) to be the group (under pointwise multiplication) of continuous group homomorphisms from \\(G\\) to \\(\mathbf T\\). It turns out that \\(\hat G\\) itself is a locally compact abelian group.
+

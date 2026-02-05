@@ -15,7 +15,7 @@ Let \\(X\\) be a set, and let \\(X^{\mathbb N}\\) denote the set of sequences in
 
 Consider a function \\(P : X^{\mathbb N} \to \{0,1\} \\). Interpreting 0 and 1 as boolean values, we can understand \\(P\\) as a proposition about sequences. Therefore, given a sequence \\((x_n)\in X^{\mathbb N}\\), we will abusively write \\(P((x_n))\\) to denote that \\(P((x_n))=1\\) and \\(\neg P((x_n))\\) to denote that \\(P((x_n))=0\\).
 
-Given such a proposition \\(P\\), let \\(\bar P((x_n))\\) denote the proposition that \\(P((x_{n_k}))\\) holds for every subsequence \\((x_{n_k})\\) in \\((x_n)\\). We will say that \\(P\\) is *subinvariant* if \\(P\implies \bar P\\). In words, this says that if \\(P\\) holds for some sequence, then it also holds for every subsequence.Additionally, we will say that \\(P\\) is *cosubinvariant* if \\(\overline{\neg\left(\overline{\neg P}\right)}\implies P\\). Unwrapping this statement and taking the contrapositive, this says that if \\(P\\) fails to hold for some sequence, then there exists a subsequence, *no subsequence of which* satisfies \\(P\\).
+Given such a proposition \\(P\\), let \\(\bar P((x_n))\\) denote the proposition that \\(P((x_{n_k}))\\) holds for every subsequence \\((x_{n_k})\\) in \\((x_n)\\). We will say that \\(P\\) is *subinvariant* if \\(P\implies \bar P\\). In words, this says that if \\(P\\) holds for some sequence, then it also holds for every subsequence. We will say that \\(P\\) is *cosubinvariant* if \\(\overline{\neg\left(\overline{\neg P}\right)}\implies P\\). Unwrapping this statement and taking the contrapositive, this says that if \\(P\\) fails to hold for some sequence, then there exists a subsequence, *no subsequence of which* satisfies \\(P\\).
 
 Note: neither subinvariance nor cosubinvariance imply one another, and a proposition can have both properties, as demonstrated by the following few examples. However, one useful, though uninteresting, fact is that if \\(P\\) is subinvariant, then \\(\neg P\\) is cosubinvariant.
 
@@ -27,8 +27,12 @@ The motivating example for this post is [convergence in a topological space](htt
 
 Main Point
 ===
-Suppose we have a subinvariant proposition \\(P:X^{\mathbb N}\to \{0,1\}\\) and a cosubinvariant proposition \\(Q:X^{\mathbb N}\to \{0,1\}\).
+Suppose we have a subinvariant proposition \\(P:X^{\mathbb N}\to \{0,1\}\\) and a cosubinvariant proposition \\(Q:X^{\mathbb N}\to \{0,1\}\\).
 
-**Theorem:** If \\(P\implies \neg\left(\overline{\neg Q}\right)\\), then \\(P\implies Q\\). In words, to prove that \\(P\implies Q\\), one only needs to prove the following proposition:
+**Theorem:** To prove that \\(P\implies Q\\), one only needs to prove the following proposition:
 > If \\(P(x_n)\\) holds, then \\((x_n)\\) has a subsequence satisfying \\(Q\\).         (1)
-**Proof:** Assume that (1) holds. By way of contradiction, assume there exists a sequence \\((x_n)\\) with \\(P(x_n)\\) and \\(\neg Q(x_n)\\). Since \\(Q\\) is cosubinvariant, there exists a subsequence \\((x_{n_k})\\), no subsequence of which satisfies \\(Q\\). However, since \\(P\\) is subinvariant, \\(P(x_{n_k})\\) holds. By our assumption, \\((x_{n_k})\\) has a subsequence satisfying \\(Q\\), a contradiction. QED.
+
+**Proof:** Assume that (1) holds. By way of contradiction, assume there exists a sequence \\((x_n)\\) with \\(P((x_n))\\) and \\(\neg Q((x_n))\\). Since \\(Q\\) is cosubinvariant, there exists a subsequence \\((x_{n_k})\\), no subsequence of which satisfies \\(Q\\). However, since \\(P\\) is subinvariant, \\(P(x_{n_k})\\) holds. By our assumption, \\((x_{n_k})\\) has a subsequence satisfying \\(Q\\), a contradiction. QED.
+
+One application of this theorem is the following: suppose the set \\(X\\) is imbued with two topologies, \\(\tau_1\\) and \\(\tau_2\\). (Technically, we require these topologies to be locally second-countable in order to work with sequences, but what we did above can easily be extended to nets in order to accomodate any topologies.) To prove that \\(\tau_1\\) is finer than \\(\tau_2\\), one only needs to establish the following proposition:
+> If \\(x_n\to x)\\ with respect to \\(\tau_1\\), then there exists a subsequence \\((x_{n_k})\\) that converges to \\(x\\) in \\(\tau_2\\).

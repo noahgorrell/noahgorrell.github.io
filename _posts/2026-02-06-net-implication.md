@@ -1,6 +1,6 @@
 ---
 title: 'A Tidbit on Properties of Sequences'
-date: 2026-02-05
+date: 2026-02-06
 permalink: /posts/2026/02/sequence-properties/
 tags:
   - cool posts
@@ -36,7 +36,7 @@ These ideas can be analogised to the setting of nets as well.
 
 Now, if \\(X\\) is a topological space, recall that a sequence \\(x_n\\) in \\(X\\) is said to *converge* to \\(x\in X\\) if for every neighbourhood \\(U\\) of \\(x\\), \\(x_n\\) is eventually contained in \\(U\\). Given \\(x\in X\\), it is easy to see that the set of sequences converging to \\(x\\) is downwards-closed. (You can show this directly, but you can also see the set of sequences converging to \\(x\\) as an intersection of the sets described in 3 above.) Moreover, the set of sequences *not* converging to \\(x\\) is locally downwards-closed. Therefore, the theorem stated above specialises to the following result.
 
-**Theorem:** Let \\(\tau_1\\) and \\(\tau_2\\) be two topologies on \\(X\\).[^top] Suppose that, for any sequence \\((x_n)_{n\in\mathb N}\\) that converges to \\(x\\) with respect to \\(\tau_1\\), there exists a subsequence \\((x_{n_k})_{k\in\mathbb N}\\) that converges to \\(x\\) with respect to \\(\tau_2\\). Then, \\(\tau_1\\) is a finer topology than \\(\tau_2\\).
+**Theorem:** Let \\(\tau_1\\) and \\(\tau_2\\) be two topologies on \\(X\\).[^top] Suppose that, whenever \\(x_n\to x\\) with respect to \\(\tau_1\\), there exists a subsequence \\((x_{n_k})_{k\in\mathbb N}\\) that converges to \\(x\\) with respect to \\(\tau_2\\). Then, \\(\tau_1\\) is a finer topology than \\(\tau_2\\).
 
 [^top]: Strictly, we require these topologies to be locally second-countable, but this condition can be removed if we consider nets instead of sequences.
 
